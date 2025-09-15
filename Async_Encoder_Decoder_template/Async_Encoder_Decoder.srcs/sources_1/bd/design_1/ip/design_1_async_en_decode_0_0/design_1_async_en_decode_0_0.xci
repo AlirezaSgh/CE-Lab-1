@@ -30,7 +30,7 @@
         "OUTPUTDIR": [ { "value": "../../../../../../Async_Encoder_Decoder.gen/sources_1/bd/design_1/ip/design_1_async_en_decode_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
-        "SWVERSION": [ { "value": "2025.1" } ],
+        "SWVERSION": [ { "value": "2023.2" } ],
         "SYNTHESISFLOW": [ { "value": "OOC_HIERARCHICAL" } ]
       }
     },

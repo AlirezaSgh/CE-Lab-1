@@ -1,5 +1,5 @@
 // (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-// (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
+// (c) Copyright 2022-2024 Advanced Micro Devices, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of AMD and is protected under U.S. and international copyright
@@ -50,9 +50,9 @@
 // IP VLNV: xilinx.com:module_ref:async_en_decode:1.0
 // IP Revision: 1
 
-(* X_CORE_INFO = "async_en_decode,Vivado 2025.1" *)
+(* X_CORE_INFO = "async_en_decode,Vivado 2023.2" *)
 (* CHECK_LICENSE_TYPE = "design_1_async_en_decode_0_0,async_en_decode,{}" *)
-(* CORE_GENERATION_INFO = "design_1_async_en_decode_0_0,async_en_decode,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=async_en_decode,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* CORE_GENERATION_INFO = "design_1_async_en_decode_0_0,async_en_decode,{x_ipProduct=Vivado 2023.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=async_en_decode,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_async_en_decode_0_0 (
@@ -63,9 +63,8 @@ module design_1_async_en_decode_0_0 (
   led
 );
 
-(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
-(* X_INTERFACE_MODE = "slave" *)
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
 input wire reset;
 input wire prog_select;
 input wire [2 : 0] bin_rot;
