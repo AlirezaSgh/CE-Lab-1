@@ -29,6 +29,19 @@ module async_en_decode(
     );
     
     // Write code here
+    always @(*) begin
+        if(reset) led = 4'd0;
+        else if (prog_select) begin
+            case (gray_rot)
+                4'b0000: led = 4'd0;
+                4'b0100: led = 4'd1;
+                4'b0101: led = 4'd2;
+                4'b0111: led = 4'b0011;
+                4'b0 
+                
+            endcase
+        end
+    end
     
     
     
