@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Mon Sep 15 19:00:47 2025
+// Date        : Mon Sep 15 20:17:00 2025
 // Host        : fedora running 64-bit Fedora release 42 (Adams)
 // Command     : write_verilog -force -mode funcsim
 //               /home/alireza/Uni/Computer-Engineering/Labs/1/Debouncer/Debouncer.gen/sources_1/bd/design_1/ip/design_1_encoder_0_0/design_1_encoder_0_0_sim_netlist.v
@@ -37,25 +37,99 @@ module design_1_encoder_0_0
   design_1_encoder_0_0_encoder inst
        (.A(A),
         .B(B),
-        .EncOut(EncOut),
+        .Q(EncOut),
         .clk(clk),
         .reset(reset));
 endmodule
 
 (* ORIG_REF_NAME = "encoder" *) 
 module design_1_encoder_0_0_encoder
-   (reset,
-    clk,
+   (Q,
     A,
     B,
-    EncOut);
-  input reset;
-  input clk;
+    reset,
+    clk);
+  output [3:0]Q;
   input A;
   input B;
-  output [3:0]EncOut;
+  input reset;
+  input clk;
 
+  wire A;
+  wire B;
+  wire \EncOut[0]_i_1_n_0 ;
+  wire \EncOut[1]_i_1_n_0 ;
+  wire \EncOut[2]_i_1_n_0 ;
+  wire \EncOut[3]_i_1_n_0 ;
+  wire \EncOut[3]_i_2_n_0 ;
+  wire [3:0]Q;
+  wire clk;
+  wire reset;
 
+  LUT1 #(
+    .INIT(2'h1)) 
+    \EncOut[0]_i_1 
+       (.I0(Q[0]),
+        .O(\EncOut[0]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT4 #(
+    .INIT(16'hA659)) 
+    \EncOut[1]_i_1 
+       (.I0(Q[0]),
+        .I1(A),
+        .I2(B),
+        .I3(Q[1]),
+        .O(\EncOut[1]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'hF708AE51)) 
+    \EncOut[2]_i_1 
+       (.I0(Q[0]),
+        .I1(A),
+        .I2(B),
+        .I3(Q[2]),
+        .I4(Q[1]),
+        .O(\EncOut[2]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h6)) 
+    \EncOut[3]_i_1 
+       (.I0(A),
+        .I1(B),
+        .O(\EncOut[3]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'hBFFF4000FFF4000B)) 
+    \EncOut[3]_i_2 
+       (.I0(B),
+        .I1(A),
+        .I2(Q[0]),
+        .I3(Q[1]),
+        .I4(Q[3]),
+        .I5(Q[2]),
+        .O(\EncOut[3]_i_2_n_0 ));
+  FDRE \EncOut_reg[0] 
+       (.C(clk),
+        .CE(\EncOut[3]_i_1_n_0 ),
+        .D(\EncOut[0]_i_1_n_0 ),
+        .Q(Q[0]),
+        .R(reset));
+  FDRE \EncOut_reg[1] 
+       (.C(clk),
+        .CE(\EncOut[3]_i_1_n_0 ),
+        .D(\EncOut[1]_i_1_n_0 ),
+        .Q(Q[1]),
+        .R(reset));
+  FDRE \EncOut_reg[2] 
+       (.C(clk),
+        .CE(\EncOut[3]_i_1_n_0 ),
+        .D(\EncOut[2]_i_1_n_0 ),
+        .Q(Q[2]),
+        .R(reset));
+  FDRE \EncOut_reg[3] 
+       (.C(clk),
+        .CE(\EncOut[3]_i_1_n_0 ),
+        .D(\EncOut[3]_i_2_n_0 ),
+        .Q(Q[3]),
+        .R(reset));
 endmodule
 `ifndef GLBL
 `define GLBL

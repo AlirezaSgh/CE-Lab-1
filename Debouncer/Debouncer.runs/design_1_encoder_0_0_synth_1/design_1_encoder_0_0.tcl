@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "design_1_encoder_0_0_synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 3
 set_param general.usePosixSpawnForFork 1
 set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config  -id {BD 41-967}  -string {{CRITICAL WARNING: [BD 41-967] AXI interface pin /reboot_riscv/s_axi_control is not associated to any clock pin. It may not work correctly.}}  -suppress 
@@ -76,7 +77,6 @@ set_property webtalk.parent_dir /home/alireza/Uni/Computer-Engineering/Labs/1/De
 set_property parent.project_path /home/alireza/Uni/Computer-Engineering/Labs/1/Debouncer/Debouncer.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
 update_ip_catalog
 set_property ip_output_repo /home/alireza/Uni/Computer-Engineering/Labs/1/Debouncer/Debouncer.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]

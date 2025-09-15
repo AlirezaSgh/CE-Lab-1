@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Mon Sep 15 19:00:47 2025
+-- Date        : Mon Sep 15 20:17:00 2025
 -- Host        : fedora running 64-bit Fedora release 42 (Adams)
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/alireza/Uni/Computer-Engineering/Labs/1/Debouncer/Debouncer.gen/sources_1/bd/design_1/ip/design_1_encoder_0_0/design_1_encoder_0_0_stub.vhdl
