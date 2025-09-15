@@ -28,5 +28,17 @@ module encoder (
     );
 
     // Add your code here
-
+    always @(posedge clk) begin
+        if (reset) begin 
+            EncOut <= 4'b0000; 
+        end
+        else begin
+            if (A && !B) begin
+                EncOut <= EncOut + 1'b1;
+            end
+            else if (!A && B) begin
+                EncOut <= EncOut - 1'b1;
+            end
+         end
+    end
 endmodule
