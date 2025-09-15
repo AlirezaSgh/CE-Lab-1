@@ -1,0 +1,164 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x22A8F13E9F428732",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../Debouncer.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2023.2"
+    },
+    "design_tree": {
+      "encoder_0": "",
+      "debouncer_0": "",
+      "debouncer_1": ""
+    },
+    "ports": {
+      "sysclk": {
+        "type": "clk",
+        "direction": "I"
+      },
+      "btn1": {
+        "direction": "I"
+      },
+      "btn2": {
+        "direction": "I"
+      },
+      "led": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "reset": {
+        "type": "rst",
+        "direction": "I"
+      }
+    },
+    "components": {
+      "encoder_0": {
+        "vlnv": "xilinx.com:module_ref:encoder:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_encoder_0_0",
+        "xci_path": "ip\\design_1_encoder_0_0\\design_1_encoder_0_0.xci",
+        "inst_hier_path": "encoder_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "encoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "A": {
+            "direction": "I"
+          },
+          "B": {
+            "direction": "I"
+          },
+          "EncOut": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "debouncer_0": {
+        "vlnv": "xilinx.com:module_ref:debouncer:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_debouncer_0_1",
+        "xci_path": "ip\\design_1_debouncer_0_1\\design_1_debouncer_0_1.xci",
+        "inst_hier_path": "debouncer_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "debouncer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "btn_in": {
+            "direction": "I"
+          },
+          "btn_out": {
+            "direction": "O"
+          }
+        }
+      },
+      "debouncer_1": {
+        "vlnv": "xilinx.com:module_ref:debouncer:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_debouncer_1_0",
+        "xci_path": "ip\\design_1_debouncer_1_0\\design_1_debouncer_1_0.xci",
+        "inst_hier_path": "debouncer_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "debouncer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "btn_in": {
+            "direction": "I"
+          },
+          "btn_out": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "A_0_1": {
+        "ports": [
+          "btn1",
+          "debouncer_0/btn_in",
+          "encoder_0/A"
+        ]
+      },
+      "B_0_1": {
+        "ports": [
+          "btn2",
+          "debouncer_1/btn_in",
+          "encoder_0/B"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "sysclk",
+          "debouncer_0/clk",
+          "debouncer_1/clk",
+          "encoder_0/clk"
+        ]
+      },
+      "encoder_0_EncOut": {
+        "ports": [
+          "encoder_0/EncOut",
+          "led"
+        ]
+      },
+      "reset_0_1": {
+        "ports": [
+          "reset",
+          "encoder_0/reset"
+        ]
+      }
+    }
+  }
+}

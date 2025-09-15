@@ -1,0 +1,121 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xBDDFFE6DEC1E38F7",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../Async_Encoder_Decoder.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2023.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "async_en_decode_0": ""
+    },
+    "ports": {
+      "reset": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "gray_rot": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "led": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "sw": {
+        "direction": "I"
+      },
+      "bin_rot": {
+        "direction": "I",
+        "left": "2",
+        "right": "0"
+      }
+    },
+    "components": {
+      "async_en_decode_0": {
+        "vlnv": "xilinx.com:module_ref:async_en_decode:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_async_en_decode_0_0",
+        "xci_path": "ip\\design_1_async_en_decode_0_0\\design_1_async_en_decode_0_0.xci",
+        "inst_hier_path": "async_en_decode_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "async_en_decode",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "prog_select": {
+            "direction": "I"
+          },
+          "bin_rot": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "gray_rot": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "led": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "async_en_decode_0_led": {
+        "ports": [
+          "async_en_decode_0/led",
+          "led"
+        ]
+      },
+      "bin_rot_0_1": {
+        "ports": [
+          "bin_rot",
+          "async_en_decode_0/bin_rot"
+        ]
+      },
+      "gray_rot_0_1": {
+        "ports": [
+          "gray_rot",
+          "async_en_decode_0/gray_rot"
+        ]
+      },
+      "prog_select_0_1": {
+        "ports": [
+          "sw",
+          "async_en_decode_0/prog_select"
+        ]
+      },
+      "reset_0_1": {
+        "ports": [
+          "reset",
+          "async_en_decode_0/reset"
+        ]
+      }
+    }
+  }
+}
